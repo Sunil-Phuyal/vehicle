@@ -1,0 +1,229 @@
+:root {
+	--primary: #007bff;
+	--primary-dark: #0056b3;
+	--primary-light: #e0f0ff;
+	--success: #10b981;
+	--warning: #f59e0b;
+	--danger: #ef4444;
+	--gray-300: #f3f6fc;
+	--text-primary: #111827;
+	--text-secondary: #6b7280;
+	--radius: 12px;
+	--shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Welcome Section */
+.welcome-section {
+	background: linear-gradient(to right, #626364, #052140);
+	color: white;
+	padding: 2rem;
+	border-radius: var(--radius);
+	margin-bottom: 2rem;
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.welcome-title {
+	font-size: 2.25rem;
+	font-weight: 700;
+}
+
+.welcome-subtitle {
+	font-size: 1.125rem;
+	opacity: 0.95;
+}
+
+#dashboard {
+	position: relative;
+}
+
+/* Dashboard Grid Cards */
+.dashboard-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.stat-card {
+	background: var(--border);
+	padding: 1.5rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+	transform: translateY(-5px);
+}
+
+.stat-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.75rem;
+}
+
+.stat-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--text-secondary);
+}
+
+.stat-icon {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25rem;
+	box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon.blue {
+	background-color: var(--primary-light);
+	color: var(--primary);
+}
+
+.stat-icon.green {
+	background-color: rgba(16, 185, 129, 0.15);
+	color: var(--success);
+}
+
+.stat-icon.orange {
+	background-color: rgba(245, 158, 11, 0.15);
+	color: var(--warning);
+}
+
+.stat-icon.red {
+	background-color: rgba(239, 68, 68, 0.15);
+	color: var(--danger);
+}
+
+.stat-value {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--text-primary);
+}
+
+/* Tables Section */
+.tables-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.dashboard-table {
+	background-color: var(--border);
+	padding: 1.25rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	flex: 1;
+	min-width: 320px;
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard-table h3 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--text-primary);
+	margin-bottom: 1rem;
+	padding-bottom: 0.3rem;
+	position: relative;
+}
+
+.dashboard-table h3::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	height: 4px;
+	background: var(--gray-700);
+	width: 30%;
+	left: 0;
+	border-radius: 50px;
+}
+
+.dashboard-table table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.dashboard-table th, .dashboard-table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	font-size: 14px;
+	border-bottom: 1px solid #c5d2f0;
+}
+
+.dashboard-table th {
+	background-color: #f1f5f9;
+	font-weight: 700;
+	color: #1f2937;
+}
+
+.dashboard-table tbody tr:hover {
+	background-color: #f0f5ff;
+}
+
+.view-all-btn {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.view-all-btn a {
+	background-color: var(--primary);
+	color: white;
+	padding: 0.6rem 1.5rem;
+	font-weight: 600;
+	font-size: 0.95rem;
+	text-decoration: none;
+	border-radius: 20px;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	display: inline-block;
+	box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+	width: 100%;
+}
+
+.view-all-btn a:hover {
+	background-color: var(--primary-dark);
+	box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
+}
+
+.popup {
+	position: absolute;
+	top: 20%;
+	right: -5%;
+	transform: translate(-50%, -20%);
+	background-color: #fff;
+	padding: 20px 30px;
+	border-radius: 8px;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	text-align: center;
+	min-width: 280px;
+}
+
+.popup p {
+	margin: 0 0 15px 0;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.popup button {
+	padding: 8px 20px;
+	border: none;
+	background-color: #007bff;
+	color: white;
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.popup button:hover {
+	background-color: #0056b3;
+}

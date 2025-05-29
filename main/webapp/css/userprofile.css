@@ -1,0 +1,142 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: var(--white);
+}
+
+.container {
+	display: flex;
+}
+
+.sidebar {
+	width: 220px;
+	background: var(--gray-900);
+	color: white;
+	padding: 20px;
+	min-height: 100vh;
+	position: relative;
+}
+
+.sidebar p {
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+	text-align: left;
+	display: block;
+	margin: 10px 0;
+	width: 100%;
+	padding: 4px 6px;
+	border-radius: 8px;
+	transition: 0.3s al ease;
+}
+
+.back{
+	color: #286ad7;
+	margin: 0 0 4rem;
+	
+}
+
+.sidebar p:hover{
+	background: var(--gray-700);
+}
+
+
+.sidebar h3 {
+	margin-top: 10px;
+}
+
+.content {
+	flex-grow: 1;
+	background: white;
+	padding: 20px;
+	border-radius: 6px;
+	margin-left: 20px;
+}
+
+.section {
+	display: none;
+}
+
+.section.active {
+	display: block;
+}
+
+.section h2 {
+	color: var(--gray-900);
+}
+
+.section label {
+	display: block;
+	margin-top: 10px;
+	font-weight: bold;
+	color: var(--black);
+}
+
+.section input {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.section button {
+	margin-top: 10px;
+	padding: 8px 16px;
+}
+
+.danger-btn {
+	background-color: #e30b0b;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1rem;
+	width: 80%;
+	padding: .5rem;
+}
+
+#passwordSection input{
+	width: 50%;
+	position: relative;
+}
+
+.success, .error {
+	margin: 10px 0;
+}
+
+.booking-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.booking-table th, .booking-table td {
+	border: 1px solid #ccc;
+	padding: 8px;
+}
+
+.booking-table tr{
+	color: var(--gray-700);
+}
+
+.edit-toggle {
+	float: right;
+}
+
+.popup {
+    background: #d4edda;
+    color: #155724;
+    padding: 1em 2em;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.timestamp{
+	color: var(--gray-700);
+}

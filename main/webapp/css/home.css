@@ -1,0 +1,463 @@
+/* ---Slider--- */
+.container {
+    height: auto;
+    width: 100%;
+}
+
+/* ---Hero Section--- */
+.hero {
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url('../assets/bg-img/download.gif') no-repeat center/cover;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.slide .text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  color: var(--white);
+  border-radius: 12px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.slide .text h2,
+.slide .text p,
+.slide .text a {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.slide .text h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  animation-name: slideInDown;
+}
+
+.slide .text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  animation-name: slideInUp;
+  animation-delay: 0.2s;
+}
+
+.slide .text a {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  animation-name: fadeIn;
+  animation-delay: 0.4s;
+}
+
+.slide .text a:hover {
+  background-color: var(--gray-300);
+  transform: scale(1.05);
+}
+
+/* Scroll Down Icon */
+.down {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 2s infinite;
+  transition: box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+.down:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+  
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    width: 320px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-right: 15px;
+}
+
+.item-text h3 {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.item-text p {
+    font-size: 0.95rem;
+    color: var(--gray-200);
+}
+
+/* Search Section */
+.search-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 2rem;
+    background-color: var(--gray-100);
+    color: var(--black);
+}
+
+.search-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.search-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search-form legend {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.search-form select,
+.search-form input[type="date"] {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-300);
+    background-color: var(--white);
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: var(--gray-700);
+}
+
+.how-it-works {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.step-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--gray-100);
+    border-radius: 1rem;
+    border: 1px solid var(--gray-900);
+}
+
+.step-item i {
+    font-size: 2rem;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.step-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--black);
+}
+
+.step-item p {
+    font-size: 0.95rem;
+    color: var(--gray-700);
+}
+
+
+/* vehicle-section */
+.featured-vehicle {
+    padding: 2rem;
+    background: var(--gray-100);
+}
+
+.featured-vehicle h2{
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    
+}
+
+.vehicle-item {
+    background: var(--gray-100);
+    border-radius: 20px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+.vehicle-item:hover{
+    cursor: pointer;
+}
+
+.vehicle-img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: var(--gray-300);
+}
+
+.vehicle-img img {
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s transform ease;
+}
+
+.vehicle-info {
+    padding: 1.2rem;
+    width: 100%;
+}
+
+.vehicle-item h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.8rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.other-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.other-details  p{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    flex: 0 1 45%;
+}
+
+.vehicle-item a{
+    padding: 10px 24px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vehicle-img img:hover{
+    transform: scale(1.2);
+}
+
+.vehicle-item a:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Testimonial Section */
+.testimonials-section {
+    padding: 4rem 2rem;
+    background-color: var(--gray-100);
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    background-color: var(--gray-200);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.testimonial-item h3 {
+    font-size: 1rem;
+    color: var(--gray-200);
+    font-weight: 600;
+}
+
+/* Company-logo */
+.company-logos-section {
+    padding: .5rem 0;
+    background: var(--white);
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-logos img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}

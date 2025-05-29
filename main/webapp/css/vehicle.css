@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700&display=swap')
+	;
+
+:root {
+	--primary: #111;
+	--accent: #555;
+	--light-gray: #f5f5f5;
+	--border-color: var(--gray-700);
+	--shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+	font-family: 'Epilogue', sans-serif;
+	background: var(--black);
+	color: var(--primary);
+	line-height: 1.6;
+	position: relative;
+}
+
+.container {
+	background: #d3d3d3;
+}
+
+/* Hero Section */
+.hero {
+	height: 250px;
+	background: var(--primary);
+	color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.75rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+/* Filter Section */
+.one {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	border-bottom: 1px solid var(--border-color);
+	background: var(--light-gray);
+}
+
+.one h2 {
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.filter form {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.filter select {
+	padding: 0.75rem 1rem;
+	font-size: 1rem;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	background: var(--white);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.filter select:hover, .filter select:focus {
+	outline: none;
+	border-color: var(--accent);
+}
+
+/* section two */
+.two {
+	display: flex;
+	gap: 2rem;
+	padding: 2rem;
+	flex-wrap: wrap;
+}
+
+/* Sidebar Form */
+.sidebar {
+	flex: 1;
+	min-width: 280px;
+	max-width: 300px;
+	background: #fff;
+	border: 1px solid var(--border-color);
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	height: fit-content;
+}
+
+.search-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.search-form fieldset {
+	border: none;
+	padding: 0;
+}
+
+.search-form legend {
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.search-form select, .search-form input[type="date"] {
+	width: 100%;
+	padding: 0.6rem 0.8rem;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	font-size: 1rem;
+	background: var(--white);
+	margin-bottom: .5rem;
+}
+
+.search-form button {
+	padding: 0.75rem;
+	background: var(--primary);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+	background: #000;
+}
+
+/* Vehicle List */
+.vehicle-list {
+	flex: 3;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+	align-items: stretch;
+}
+
+.item {
+	background: var(--white);
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 8px 20px var(--shadow);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.vehicle-head {
+	text-align: center;
+	padding: 1rem;
+}
+
+.vehicle-name {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--primary);
+	margin-top: 0.5rem;
+}
+
+.img img {
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	border-bottom: 1px solid var(--border-color);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.item:hover .img img {
+	transform: scale(1.2);
+}
+
+/* Vehicle Details */
+.vehicle-details {
+	padding: 1rem 1.2rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.75rem;
+}
+
+.vehicle-details p {
+	font-size: 0.95rem;
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: var(--gray-900);
+}
+
+/* Rent Button */
+.rent-btn {
+	padding: 1rem;
+	text-align: center;
+	border-top: 1px solid var(--border-color);
+}
+
+.rent-btn a {
+	display: inline-block;
+	padding: 0.6rem 1.5rem;
+	font-size: 1rem;
+	color: var(--primary);
+	font-weight: 600;
+	border: 2px solid var(--primary);
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.rent-btn a:hover {
+	background: var(--primary);
+	color: var(--white);
+}
+
+
+.not-available-box {
+	padding: 8px 12px;
+	background-color: #000;
+	color: #fe8484;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.not-available {
+	font-weight: bold;
+}
+
+.popup {
+  position: absolute;
+  top: 5%;
+  right: -4%;
+  transform: translate(-50%, -20%);
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  text-align: center;
+  min-width: 280px;
+}
+
+.popup p {
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.popup button {
+  padding: 8px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+}

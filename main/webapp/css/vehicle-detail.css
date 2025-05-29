@@ -1,0 +1,204 @@
+:root {
+  --primary: #054767;
+  --primary-dark: #03384f;
+  --accent: #e1e2e2;
+  --black: #1f1f1f;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e0e0e0;
+  --gray-300: #cfcfcf;
+  --gray-700: #4d4d4d;
+  --gray-900: #2c2c2c;
+}
+
+body, .vehicle-detail-page {
+  background-color: var(--white);
+  margin: 0;
+  padding: 0 0 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.vehicle-detail-page {
+  width: 100%;
+  padding: 2rem 5%;
+  color: var(--black);
+}
+
+/* Title */
+.vehicle-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+/* Main image + info */
+.image-info-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vehicle-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.vehicle-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.vehicle-info ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.vehicle-info li {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--gray-100);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  color: var(--gray-900);
+  font-size: 1.1rem;
+}
+
+/* Description and Features */
+.vehicle-description,
+.vehicle-features,
+.rental-form-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--gray-700);
+}
+
+.vehicle-description h2,
+.vehicle-features h2,
+.rental-form-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.vehicle-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-100);
+}
+
+/* Features badges */
+.vehicle-features ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.vehicle-features li {
+  background-color: var(--white);
+  color: var(--primary);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* Rental form */
+.rental-form-section {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.rental-form-section form {
+  display: grid;
+  gap: 1rem;
+}
+
+.date,
+.location {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date div,
+.location div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.rental-form-section label {
+  font-weight: 500;
+  color: var(--gray-100);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.rental-form-section input,
+.rental-form-section select {
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--white);
+  color: var(--gray-900);
+  width: 100%;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Sign-in notice */
+.need-login {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  margin: 2rem 0 0;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+.need-login a {
+  font-weight: 500;
+  text-decoration: underline;
+  color: var(--accent);
+}
