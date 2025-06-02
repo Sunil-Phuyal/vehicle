@@ -14,7 +14,7 @@ import com.FleetX.model.UserModel;
  */
 public class RegisterService {
 	private Connection dbConnection;
-	
+
 	/**
 	 * Constructor that initializes the database connection.
 	 * Uses DbConfig to establish a connection to the database.
@@ -28,12 +28,12 @@ public class RegisterService {
 			ex.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Adds a new user to the database with all required user information.
 	 * Inserts the user's personal details, contact information, credentials, and role.
 	 * Performs a null check on the database connection before attempting insertion.
-	 * 
+	 *
 	 * @param userModel The user model containing all registration information
 	 * @return Boolean indicating registration result:
 	 *         - true: registration successful (user added to database)
@@ -44,7 +44,7 @@ public class RegisterService {
 			System.err.println("Database connection is not available");
 			return false;
 		}
-		
+
 		String sql = "INSERT INTO users (FirstName, LastName, UserName, DOB, Number, Password, Email, Role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		try (PreparedStatement pst = dbConnection.prepareStatement(sql)) {
 			// Set all user properties in the prepared statement
@@ -56,7 +56,7 @@ public class RegisterService {
 			pst.setString(6, userModel.getPassword());  // Note: Password should be encrypted before this point
 			pst.setString(7, userModel.getEmail());
 			pst.setString(8, userModel.getRole());
-			
+
 			// Execute the insert and return true if at least one row was affected
 			return pst.executeUpdate() > 0;
 		} catch (SQLException e) {

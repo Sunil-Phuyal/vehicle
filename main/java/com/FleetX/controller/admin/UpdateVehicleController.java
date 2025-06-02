@@ -1,5 +1,12 @@
 package com.FleetX.controller.admin;
 
+import java.io.IOException;
+import java.math.BigDecimal;
+
+import com.FleetX.model.VehicleModel;
+import com.FleetX.service.VehicleService;
+import com.FleetX.util.ImageUtil;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,13 +14,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-
-import com.FleetX.model.VehicleModel;
-import com.FleetX.service.VehicleService;
-import com.FleetX.util.ImageUtil;
 
 /**
  * Servlet implementation for updating vehicle information in the FleetX system.
@@ -36,13 +36,14 @@ public class UpdateVehicleController extends HttpServlet {
     /**
      * Handles POST requests to update vehicle information
      * No doGet method implemented as this controller only processes form submissions
-     * 
+     *
      * @param request HTTP request object containing updated vehicle form data
      * @param response HTTP response object
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         // Set proper character encoding for handling non-ASCII characters

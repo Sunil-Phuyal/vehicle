@@ -1,5 +1,10 @@
 package com.FleetX.filter;
 
+import java.io.IOException;
+
+import com.FleetX.util.CookieUtil;
+import com.FleetX.util.SessionUtil;
+
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.FilterConfig;
@@ -10,10 +15,6 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
-import com.FleetX.util.CookieUtil;
-import com.FleetX.util.SessionUtil;
 
 /**
  * Authentication and authorization filter for the FleetX application.
@@ -55,7 +56,7 @@ public class AuthenticationFilter extends HttpFilter implements Filter {
     /**
      * Called when the filter is initialized.
      * Not used in this implementation.
-     * 
+     *
      * @param fConfig Filter configuration
      * @throws ServletException If a servlet error occurs
      */
@@ -67,7 +68,7 @@ public class AuthenticationFilter extends HttpFilter implements Filter {
     /**
      * Main filter method that handles request authentication and authorization.
      * Implements role-based access control for the application.
-     * 
+     *
      * @param request The servlet request
      * @param response The servlet response
      * @param chain The filter chain for invoking the next filter or resource

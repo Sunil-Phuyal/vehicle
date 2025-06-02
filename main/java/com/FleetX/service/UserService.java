@@ -34,7 +34,7 @@ public class UserService {
 
 	/**
 	 * Retrieves a user's ID by their username
-	 * 
+	 *
 	 * @param username The username to search for
 	 * @return The user ID if found, 0 otherwise
 	 */
@@ -56,7 +56,7 @@ public class UserService {
 
 	/**
 	 * Retrieves all users with the role of "customer"
-	 * 
+	 *
 	 * @return List of UserModel objects
 	 */
 	public List<UserModel> getAllUser() {
@@ -81,7 +81,7 @@ public class UserService {
 
 	/**
 	 * Helper method to create a UserModel object from database result set
-	 * 
+	 *
 	 * @param rs ResultSet containing user data
 	 * @return Populated UserModel object
 	 */
@@ -107,7 +107,7 @@ public class UserService {
 
 	/**
 	 * Retrieves a user by their username
-	 * 
+	 *
 	 * @param username The username to search for
 	 * @return UserModel if found, null otherwise
 	 */
@@ -137,7 +137,7 @@ public class UserService {
 
 	/**
 	 * Updates a user's profile information
-	 * 
+	 *
 	 * @param user UserModel containing updated information
 	 * @return true if update successful, false otherwise
 	 */
@@ -161,7 +161,7 @@ public class UserService {
 
 	/**
 	 * Updates a user's password after verifying the old password
-	 * 
+	 *
 	 * @param uName       The username
 	 * @param oldPassword Current password
 	 * @param newPassword New password to set
@@ -205,7 +205,7 @@ public class UserService {
 
 	/**
 	 * Gets a username by email address
-	 * 
+	 *
 	 * @param email The email to search for
 	 * @return Username if found, null otherwise
 	 * @throws SQLException if database error occurs
@@ -230,7 +230,7 @@ public class UserService {
 	/**
 	 * Updates a user's password using their email address
 	 * Used for password reset functionality
-	 * 
+	 *
 	 * @param email             The user's email
 	 * @param encryptedPassword The new encrypted password
 	 * @return true if update successful, false otherwise
@@ -250,7 +250,7 @@ public class UserService {
 
 	/**
 	 * Deletes a user from the database
-	 * 
+	 *
 	 * @param userId ID of the user to delete
 	 * @return true if deletion successful, false otherwise
 	 */
@@ -268,7 +268,7 @@ public class UserService {
 
 	/**
 	 * Retrieves rental data for a specific user
-	 * 
+	 *
 	 * @param username The username to get rentals for
 	 * @return List of RentalModel objects
 	 */
@@ -312,7 +312,7 @@ public class UserService {
 
 	/**
 	 * Counts the total number of users in the database
-	 * 
+	 *
 	 * @return Total count of users
 	 */
 	public int totalUserCount() {
@@ -333,7 +333,7 @@ public class UserService {
 
 	/**
 	 * Gets the 5 most recently added customers
-	 * 
+	 *
 	 * @return List of up to 5 UserModel objects
 	 */
 	public List<UserModel> getOnly5User() {

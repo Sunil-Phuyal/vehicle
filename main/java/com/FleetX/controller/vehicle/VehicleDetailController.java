@@ -1,14 +1,15 @@
 package com.FleetX.controller.vehicle;
 
+import java.io.IOException;
+
+import com.FleetX.model.VehicleModel;
+import com.FleetX.service.VehicleService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-import com.FleetX.model.VehicleModel;
-import com.FleetX.service.VehicleService;
 
 /**
  * Servlet implementation class VehicleDetailController
@@ -27,7 +28,8 @@ public class VehicleDetailController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	try {
     		String idString = request.getParameter("vehicleId");
     		if (idString == null) {
@@ -55,6 +57,7 @@ public class VehicleDetailController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -3,7 +3,9 @@ package com.FleetX.service;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.FleetX.model.CartModel;
+
 import jakarta.servlet.http.HttpSession;
 
 /**
@@ -14,20 +16,20 @@ import jakarta.servlet.http.HttpSession;
 public class CartService {
     private static final String CART_SESSION_KEY = "cartItems";
     private HttpSession session;
-    
+
     /**
      * Constructor that initializes the cart service with the user's session.
-     * 
+     *
      * @param session The HTTP session used to store cart data
      */
     public CartService(HttpSession session) {
         this.session = session;
     }
-    
+
     /**
      * Adds a new item to the cart if it doesn't already exist.
      * Prevents duplicate vehicles by checking the vehicle ID.
-     * 
+     *
      * @param item The cart item to add
      * @return true if item was added successfully, false if it already exists
      */
@@ -47,10 +49,10 @@ public class CartService {
         }
         return false; // Not added due to duplication
     }
-    
+
     /**
      * Removes an item from the cart at the specified index.
-     * 
+     *
      * @param index The position of the item to remove
      */
     @SuppressWarnings("unchecked")
@@ -61,11 +63,11 @@ public class CartService {
             session.setAttribute(CART_SESSION_KEY, cart);
         }
     }
-    
+
     /**
      * Retrieves all items currently in the cart.
      * If the cart doesn't exist yet, creates a new empty cart.
-     * 
+     *
      * @return List of cart items
      */
     @SuppressWarnings("unchecked")
@@ -77,7 +79,7 @@ public class CartService {
         }
         return cart;
     }
-    
+
     /**
      * Removes all items from the cart.
      * Logs the clearing operation and the result.
@@ -87,11 +89,11 @@ public class CartService {
         session.removeAttribute(CART_SESSION_KEY);
         System.out.println("Cart after clearing: " + session.getAttribute(CART_SESSION_KEY));
     }
-    
+
     /**
      * Calculates the total price of all items in the cart.
      * Uses BigDecimal for precise currency calculations.
-     * 
+     *
      * @return The total price of all cart items
      */
     public BigDecimal calculateTotalPrice() {
@@ -101,10 +103,10 @@ public class CartService {
                 .map(CartModel::getTotalPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
-    
+
     /**
      * Gets the number of items in the cart.
-     * 
+     *
      * @return The number of items in the cart, or 0 if the cart is empty
      */
     @SuppressWarnings("unchecked")

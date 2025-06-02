@@ -81,9 +81,7 @@
 							<label for="pickup-location">Pickup Location:</label> <select
 								id="pickup-location" name="pickupLocation" disabled>
 								<option value="${vehicle.location}" selected>${vehicle.location}</option>
-							</select>
-							
-							<input type="hidden" name="pickupLocation"
+							</select> <input type="hidden" name="pickupLocation"
 								value="${vehicle.location}" />
 
 						</div>

@@ -18,7 +18,7 @@ import com.FleetX.model.UserModel;
  */
 public class ContactService {
 	private Connection dConnection;
-	
+
 	/**
 	 * Constructor that initializes the database connection.
 	 * Uses DbConfig to establish a connection to the database.
@@ -30,11 +30,11 @@ public class ContactService {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Retrieves a user's details from the database using their email address.
 	 * Populates a UserModel object with all user attributes.
-	 * 
+	 *
 	 * @param email The email address to search for
 	 * @return UserModel containing user details if found, null otherwise
 	 * @throws SQLException If a database error occurs
@@ -60,11 +60,11 @@ public class ContactService {
 		}
 		return user;
 	}
-	
+
 	/**
 	 * Stores a new message from a user in the database.
 	 * Records the user ID, subject, and message content.
-	 * 
+	 *
 	 * @param id The user ID of the message sender
 	 * @param subject The subject line of the message
 	 * @param message The content of the message
@@ -83,12 +83,12 @@ public class ContactService {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Retrieves all messages from the database along with the sender's email.
 	 * Joins the message table with users table to get the email address.
 	 * Orders messages by sent time in descending order (newest first).
-	 * 
+	 *
 	 * @return List of MessageModel objects containing all messages
 	 */
 	//  New method to fetch all messages with user email
@@ -112,11 +112,11 @@ public class ContactService {
 		}
 		return messages;
 	}
-	
+
 	/**
 	 * Counts the total number of messages in the system.
 	 * Used for dashboard statistics and reporting.
-	 * 
+	 *
 	 * @return Total count of message records
 	 */
 	public int totalMessageCount() {
@@ -133,12 +133,12 @@ public class ContactService {
 		}
 		return count;
 	}
-	
+
 	/**
 	 * Retrieves the 5 most recent messages from the database.
 	 * Only includes content and timestamp, not subject or sender information.
 	 * Used for dashboard preview of recent communications.
-	 * 
+	 *
 	 * @return List containing up to 5 of the most recent MessageModel objects
 	 */
 	public List<MessageModel> getOnly5Messages() {

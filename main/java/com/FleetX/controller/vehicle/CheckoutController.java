@@ -1,17 +1,17 @@
 package com.FleetX.controller.vehicle;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
 import com.FleetX.model.CartModel;
 import com.FleetX.service.CartService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(asyncSupported = true, urlPatterns = { "/Checkout" })
 public class CheckoutController extends HttpServlet {
@@ -22,7 +22,8 @@ public class CheckoutController extends HttpServlet {
     }
 
     // Load checkout.jsp on GET
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CartService cartService = new CartService(request.getSession());
 
         List<CartModel> cartItems = cartService.getCartItems();
@@ -34,5 +35,5 @@ public class CheckoutController extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/Pages/checkout.jsp").forward(request, response);
     }
 
-   
+
 }

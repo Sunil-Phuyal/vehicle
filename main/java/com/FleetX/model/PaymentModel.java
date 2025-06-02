@@ -12,20 +12,20 @@ public class PaymentModel {
     // Payment identification
     private int paymentId;
     private int rentalId;
-    
+
     // Payment details
     private BigDecimal amount;
     private Timestamp paymentDate;
-    
+
     /**
      * Default constructor
      */
     public PaymentModel() {
 	}
-    
+
     /**
      * Parameterized constructor to initialize all fields
-     * 
+     *
      * @param paymentId    Unique identifier for the payment
      * @param rentalId     ID of the rental this payment is associated with
      * @param amount       Payment amount
@@ -37,7 +37,7 @@ public class PaymentModel {
 		this.amount = amount;
 		this.paymentDate = paymentDate;
 	}
-	
+
 	/**
 	 * Gets the payment ID
 	 * @return The payment ID
@@ -45,7 +45,7 @@ public class PaymentModel {
 	public int getPaymentId() {
 		return paymentId;
 	}
-	
+
 	/**
 	 * Sets the payment ID
 	 * @param paymentId The payment ID to set
@@ -53,7 +53,7 @@ public class PaymentModel {
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
-	
+
 	/**
 	 * Gets the rental ID associated with this payment
 	 * @return The rental ID
@@ -61,7 +61,7 @@ public class PaymentModel {
 	public int getRentalId() {
 		return rentalId;
 	}
-	
+
 	/**
 	 * Sets the rental ID
 	 * @param rentalId The rental ID to set
@@ -69,7 +69,7 @@ public class PaymentModel {
 	public void setRentalId(int rentalId) {
 		this.rentalId = rentalId;
 	}
-	
+
 	/**
 	 * Gets the payment amount
 	 * @return The payment amount as BigDecimal
@@ -77,7 +77,7 @@ public class PaymentModel {
 	public BigDecimal getAmount() {
 		return amount;
 	}
-	
+
 	/**
 	 * Sets the payment amount
 	 * @param amount The payment amount to set
@@ -85,7 +85,7 @@ public class PaymentModel {
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
-	
+
 	/**
 	 * Gets the payment date and time
 	 * @return The payment timestamp
@@ -93,7 +93,7 @@ public class PaymentModel {
 	public Timestamp getPaymentDate() {
 		return paymentDate;
 	}
-	
+
 	/**
 	 * Sets the payment date and time
 	 * @param paymentDate The payment timestamp to set

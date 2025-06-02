@@ -1,6 +1,9 @@
 package com.FleetX.service;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +32,7 @@ public class VehicleService {
 
 	/**
 	 * Inserts a new vehicle into the database
-	 * 
+	 *
 	 * @param vehicle The VehicleModel object containing vehicle details
 	 * @return true if insertion successful, false otherwise
 	 */
@@ -66,7 +69,7 @@ public class VehicleService {
 
 	/**
 	 * Retrieves all vehicles from the database
-	 * 
+	 *
 	 * @return List of VehicleModel objects
 	 */
 	public List<VehicleModel> getAllVehicles() {
@@ -85,7 +88,7 @@ public class VehicleService {
 
 	/**
 	 * Retrieves vehicles filtered by various criteria
-	 * 
+	 *
 	 * @param fuel     Fuel type filter
 	 * @param gear     Transmission type filter
 	 * @param type     Vehicle category filter
@@ -135,7 +138,7 @@ public class VehicleService {
 
 	/**
 	 * Retrieves a vehicle by its ID
-	 * 
+	 *
 	 * @param id The vehicle ID to search for
 	 * @return VehicleModel if found, null otherwise
 	 */
@@ -156,7 +159,7 @@ public class VehicleService {
 
 	/**
 	 * Helper method to create a VehicleModel object from database result set
-	 * 
+	 *
 	 * @param rs ResultSet containing vehicle data
 	 * @return Populated VehicleModel object
 	 * @throws SQLException if database error occurs
@@ -183,7 +186,7 @@ public class VehicleService {
 
 	/**
 	 * Retrieves the 4 most recently added available vehicles
-	 * 
+	 *
 	 * @return List of up to 4 VehicleModel objects
 	 */
 	public List<VehicleModel> getNewAddedVehicle() {
@@ -207,7 +210,7 @@ public class VehicleService {
 
 	/**
 	 * Updates an existing vehicle in the database
-	 * 
+	 *
 	 * @param vehicle The VehicleModel object containing updated details
 	 * @return true if update successful, false otherwise
 	 */
@@ -246,7 +249,7 @@ public class VehicleService {
 
 	/**
 	 * Deletes a vehicle from the database
-	 * 
+	 *
 	 * @param vehicleId ID of the vehicle to delete
 	 * @return true if deletion successful, false otherwise
 	 */
@@ -304,7 +307,7 @@ public class VehicleService {
 
 	/**
 	 * Counts the total number of vehicles in the database
-	 * 
+	 *
 	 * @return Total count of vehicles
 	 */
 	public int totalVehicleCount() {

@@ -2,6 +2,7 @@ package com.FleetX.util;
 
 import java.io.File;
 import java.io.IOException;
+
 import jakarta.servlet.http.Part;
 
 /**
@@ -9,10 +10,10 @@ import jakarta.servlet.http.Part;
  * Provides methods for extracting image names and uploading image files.
  */
 public class ImageUtil {
-    
+
     /**
      * Extracts the original filename from a multipart request Part.
-     * 
+     *
      * @param part The Part object containing the uploaded file
      * @return The original filename of the uploaded file, or "download.png" if filename cannot be determined
      */
@@ -30,10 +31,10 @@ public class ImageUtil {
         }
         return "download.png";
     }
-    
+
     /**
      * Uploads an image file to the server's file system.
-     * 
+     *
      * @param part The Part object containing the uploaded file
      * @param appPath The base application path on the server
      * @param categoryFolder The category subfolder where the image should be stored

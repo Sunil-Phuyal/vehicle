@@ -40,9 +40,7 @@
 	font-weight: 500;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
+.form-group input, .form-group textarea, .form-group select {
 	padding: 0.75rem;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
@@ -85,17 +83,17 @@
 	background: var(--primary-dark);
 }
 
-.btn-group{
+.btn-group {
 	display: flex;
 	gap: 1rem;
 }
 
-.btn-group a{
+.btn-group a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.delete-btn{
+.delete-btn {
 	padding: .5rem;
 }

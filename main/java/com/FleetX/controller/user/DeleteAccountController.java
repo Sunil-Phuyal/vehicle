@@ -1,12 +1,14 @@
 package com.FleetX.controller.user;
 
+import java.io.IOException;
+
+import com.FleetX.service.UserService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import com.FleetX.service.UserService;
 
 /**
  * Controller for handling user account deletion requests
@@ -26,7 +28,7 @@ public class DeleteAccountController extends HttpServlet {
 
     /**
      * Handles POST requests for account deletion
-     * 
+     *
      * @param request HTTP request containing the username to delete
      * @param response HTTP response
      * @throws ServletException if a servlet-specific error occurs
@@ -46,7 +48,7 @@ public class DeleteAccountController extends HttpServlet {
 
         // Get user ID from username
         int userId = userService.getUserIdByUsername(username);
-        
+
         // Validate user ID
         if (userId <= 0) {
             System.out.println("Invalid user ID.");
@@ -56,7 +58,7 @@ public class DeleteAccountController extends HttpServlet {
 
         // Attempt to delete the user
         boolean isDeleted = userService.deleteUser(userId);
-        
+
         if (isDeleted) {
             System.out.println("User deleted successfully.");
             // Invalidate the user's session for security

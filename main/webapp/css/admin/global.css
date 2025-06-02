@@ -152,7 +152,8 @@ a {
 	width: 80%;
 	padding: 2rem;
 	overflow-y: auto;
-	background: #393939; display : none;
+	background: #393939;
+	display: none;
 	transition: width 0.3s ease;
 	display: none;
 }

@@ -1,19 +1,18 @@
 package com.FleetX.controller.user;
 
+import java.io.IOException;
+
+import com.FleetX.service.UserService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.Date;
-import com.FleetX.model.UserModel;
-import com.FleetX.service.UserService;
 
 /**
  * Servlet implementation class UpdatePassword
- * 
+ *
  * This controller handles password updates for logged-in users.
  * It verifies the old password and updates with a new one if valid.
  */
@@ -24,12 +23,13 @@ public class UpdatePasswordController extends HttpServlet {
 
 	/**
 	 * Handles POST requests for password updates
-	 * 
+	 *
 	 * @param request HTTP request containing username, old password, and new password
 	 * @param response HTTP response
 	 * @throws ServletException if a servlet-specific error occurs
 	 * @throws IOException if an I/O error occurs
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 	    // Get form parameters
@@ -47,7 +47,7 @@ public class UpdatePasswordController extends HttpServlet {
 
 	    // Attempt to update password in the database
 	    boolean success = userService.updateUserPassword(uName, oldPassword, newPassword);
-	    
+
 	    if (success) {
 	        // If successful, invalidate session for security reasons
 	        request.getSession().invalidate();

@@ -58,7 +58,7 @@
 
 				<c:if test="${not empty passwordStatus}">
 					<div id="popup" class="popup">
-					     ${passwordStatus}
+						${passwordStatus}
 						<button onclick="closePopup('popup')">OK</button>
 					</div>
 				</c:if>
@@ -114,14 +114,14 @@
 						</tr>
 					</thead>
 					<tbody>
-							<c:if test="${empty rentList}">
+						<c:if test="${empty rentList}">
 							<tr>
 								<td colspan="4">Not Data Found</td>
 							</tr>
 						</c:if>
 
-							<c:if test="${not empty rentList}">
-								<c:forEach items="${rentList}" var="rent">
+						<c:if test="${not empty rentList}">
+							<c:forEach items="${rentList}" var="rent">
 								<tr>
 									<td>${rent.rentalId}</td>
 									<td>${rent.vehicleName}</td>
@@ -129,7 +129,7 @@
 									<td>${rent.status}</td>
 								</tr>
 							</c:forEach>
-							</c:if>
+						</c:if>
 					</tbody>
 				</table>
 			</div>

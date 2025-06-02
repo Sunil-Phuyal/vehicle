@@ -14,14 +14,14 @@ public class CartModel {
     private String brand;
     private String model;
     private String imageUrl;
-    
+
     // Pricing information
     private BigDecimal dailyRate;
-    
+
     // Rental period
     private Date startDate;
     private Date endDate;
-    
+
     // Location information
     private String pickupLocation;
     private String dropupLocation;
@@ -34,7 +34,7 @@ public class CartModel {
 
     /**
      * Parameterized constructor to initialize all fields
-     * 
+     *
      * @param vehicleId       Unique identifier for the vehicle
      * @param brand           Vehicle brand name
      * @param model           Vehicle model name

@@ -1,12 +1,5 @@
 package com.FleetX.controller.admin;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-
 import java.io.IOException;
 import java.math.BigDecimal;
 
@@ -14,11 +7,18 @@ import com.FleetX.model.VehicleModel;
 import com.FleetX.service.VehicleService;
 import com.FleetX.util.ImageUtil;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+
 /**
  * Servlet implementation class EditPageController
- * 
+ *
  * This servlet handles the editing of vehicle information in the FleetX system.
- * It provides functionality for both viewing vehicle details (GET request) and 
+ * It provides functionality for both viewing vehicle details (GET request) and
  * updating vehicle information (POST request).
  */
 @WebServlet(asyncSupported = true, urlPatterns = { "/EditVehicle" })
@@ -35,12 +35,13 @@ public class EditVehicleController extends HttpServlet {
 
 	/**
 	 * Handles GET requests to display the vehicle edit form
-	 * 
+	 *
 	 * @param request HTTP request object containing the vehicleId parameter
 	 * @param response HTTP response object
 	 * @throws ServletException if a servlet-specific error occurs
 	 * @throws IOException if an I/O error occurs
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
@@ -76,7 +77,7 @@ public class EditVehicleController extends HttpServlet {
 
 	/**
 	 * Handles POST requests to update vehicle information
-	 * 
+	 *
 	 * @param request HTTP request object containing updated vehicle data
 	 * @param response HTTP response object
 	 * @throws ServletException if a servlet-specific error occurs

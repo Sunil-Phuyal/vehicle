@@ -7,15 +7,15 @@
 		<ul class="navList">
 			<li><a href="${contextPath}/">Home</a></li>
 			<li><a href="${contextPath}/about">About</a></li>
-		<c:choose>
-		<c:when test="${not empty sessionScope.username}">
-			<li><a href="${contextPath}/vehicle">Vehicle</a></li>
-			<li><a href="${contextPath}/contact">Contact</a></li>
-			</c:when>
-			<c:otherwise>
-			<li><a href="${contextPath}/login">Vehicle</a></li>
-			<li><a href="${contextPath}/login">Contact</a></li>
-			</c:otherwise>
+			<c:choose>
+				<c:when test="${not empty sessionScope.username}">
+					<li><a href="${contextPath}/vehicle">Vehicle</a></li>
+					<li><a href="${contextPath}/contact">Contact</a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a href="${contextPath}/login">Vehicle</a></li>
+					<li><a href="${contextPath}/login">Contact</a></li>
+				</c:otherwise>
 			</c:choose>
 		</ul>
 	</nav>
@@ -29,11 +29,11 @@
 		<c:when test="${not empty sessionScope.username}">
 			<div class="logged">
 				<div class="userProfile">
-				<c:choose>
-				  <c:when test="${sessionScope.username == 'admin'}">
-				  <a href="${contextPath}/Dashboard"> <i
-						class="fa-solid fa-user"></i></a>
-				  </c:when>
+					<c:choose>
+						<c:when test="${sessionScope.username == 'admin'}">
+							<a href="${contextPath}/Dashboard"> <i
+								class="fa-solid fa-user"></i></a>
+						</c:when>
 						<c:otherwise>
 							<a href="${contextPath}/userprofile"> <i
 								class="fa-solid fa-user"></i></a>

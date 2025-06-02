@@ -79,7 +79,7 @@
 							<span>${item.brand} ${item.model}</span> <span>Rs.${item.totalPrice}</span>
 						</div>
 					</c:forEach>
-				<div class="total-amount summary-row">
+					<div class="total-amount summary-row">
 						<span>Total:</span> <span>Rs.${totalPrice}</span>
 					</div>
 					<a href="${contextPath}/Checkout" class="btn btn-success"> <i

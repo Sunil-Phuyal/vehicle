@@ -1,12 +1,5 @@
 package com.FleetX.controller.vehicle;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -18,6 +11,12 @@ import com.FleetX.model.RentalModel;
 import com.FleetX.service.CartService;
 import com.FleetX.service.CheckoutService;
 import com.FleetX.service.UserService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ProcessOrderController
@@ -40,9 +39,10 @@ public class ProcessOrderController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		HttpServletRequest httpRequest = request;
 		String username = (String) request.getSession().getAttribute("username");
 		if (username == null) {
 			response.sendRedirect("login");
@@ -123,7 +123,7 @@ public class ProcessOrderController extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			
+
 			if(!isStatusUpdate) {
 				allSuccess = false;
 				break;

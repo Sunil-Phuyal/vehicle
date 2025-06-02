@@ -163,7 +163,7 @@
 						<tbody>
 							<c:forEach var="user" items="${Only5User}">
 								<tr>
-									<td>${user.fname} ${user.lname}</td>
+									<td>${user.fname}${user.lname}</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -465,9 +465,9 @@
 
 		<!-- Users -->
 		<section id="user" class="main">
-		<div class="content-header">
-					<h2 class="section-title">Users</h2>
-				</div>
+			<div class="content-header">
+				<h2 class="section-title">Users</h2>
+			</div>
 			<table class="data-table">
 				<thead>
 					<tr>
@@ -515,9 +515,9 @@
 
 		<!-- Messages -->
 		<section id="messageContent" class="main">
-		<div class="content-header">
-					<h2 class="section-title">Messages</h2>
-				</div>
+			<div class="content-header">
+				<h2 class="section-title">Messages</h2>
+			</div>
 			<table class="data-table">
 				<thead>
 					<tr>

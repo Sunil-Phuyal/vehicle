@@ -50,7 +50,7 @@ public class VehicleModel {
     /**
      * Complete constructor with all vehicle properties including ID
      * Typically used when retrieving existing vehicle data from database
-     * 
+     *
      * @param id Unique vehicle identifier
      * @param category Vehicle category
      * @param brand Manufacturer brand
@@ -90,7 +90,7 @@ public class VehicleModel {
     /**
      * Constructor for creating a new vehicle without ID (not yet stored in database)
      * Typically used when adding a new vehicle to the system
-     * 
+     *
      * @param category Vehicle category
      * @param brand Manufacturer brand
      * @param model Vehicle model name
@@ -128,7 +128,7 @@ public class VehicleModel {
     /**
      * Simplified constructor with only essential properties for vehicle listings
      * Typically used for summary displays in search results or browsing views
-     * 
+     *
      * @param id Unique vehicle identifier
      * @param brand Manufacturer brand
      * @param model Vehicle model name
@@ -149,19 +149,19 @@ public class VehicleModel {
     }
 
     // Getters and Setters
-    
+
     /**
      * Returns the vehicle's unique identifier
-     * 
+     *
      * @return The vehicle ID
      */
     public int getId() {
         return id;
     }
-    
+
     /**
      * Sets the vehicle's unique identifier
-     * 
+     *
      * @param id The vehicle ID to set
      */
     public void setId(int id) {
@@ -170,16 +170,16 @@ public class VehicleModel {
 
     /**
      * Returns the vehicle's category
-     * 
+     *
      * @return The vehicle category
      */
     public String getCategory() {
         return category;
     }
-    
+
     /**
      * Sets the vehicle's category
-     * 
+     *
      * @param category The vehicle category to set
      */
     public void setCategory(String category) {
@@ -188,16 +188,16 @@ public class VehicleModel {
 
     /**
      * Returns the manufacturer brand
-     * 
+     *
      * @return The vehicle brand
      */
     public String getBrand() {
         return brand;
     }
-    
+
     /**
      * Sets the manufacturer brand
-     * 
+     *
      * @param brand The vehicle brand to set
      */
     public void setBrand(String brand) {
@@ -206,16 +206,16 @@ public class VehicleModel {
 
     /**
      * Returns the vehicle's model name
-     * 
+     *
      * @return The vehicle model
      */
     public String getModel() {
         return model;
     }
-    
+
     /**
      * Sets the vehicle's model name
-     * 
+     *
      * @param model The vehicle model to set
      */
     public void setModel(String model) {
@@ -224,16 +224,16 @@ public class VehicleModel {
 
     /**
      * Returns the manufacturing year of the vehicle
-     * 
+     *
      * @return The vehicle year
      */
     public int getYear() {
         return year;
     }
-    
+
     /**
      * Sets the manufacturing year of the vehicle
-     * 
+     *
      * @param year The vehicle year to set
      */
     public void setYear(int year) {
@@ -242,16 +242,16 @@ public class VehicleModel {
 
     /**
      * Returns the vehicle's registration/license plate number
-     * 
+     *
      * @return The registration number
      */
     public String getRegistrationNumber() {
         return registrationNumber;
     }
-    
+
     /**
      * Sets the vehicle's registration/license plate number
-     * 
+     *
      * @param registrationNumber The registration number to set
      */
     public void setRegistrationNumber(String registrationNumber) {
@@ -260,16 +260,16 @@ public class VehicleModel {
 
     /**
      * Returns the daily rental rate for the vehicle
-     * 
+     *
      * @return The daily rate in BigDecimal for financial precision
      */
     public BigDecimal getDailyRate() {
         return dailyRate;
     }
-    
+
     /**
      * Sets the daily rental rate for the vehicle
-     * 
+     *
      * @param dailyRate The daily rate in BigDecimal for financial precision
      */
     public void setDailyRate(BigDecimal dailyRate) {
@@ -278,16 +278,16 @@ public class VehicleModel {
 
     /**
      * Returns the type of fuel the vehicle uses
-     * 
+     *
      * @return The fuel type
      */
     public String getFuelType() {
         return fuelType;
     }
-    
+
     /**
      * Sets the type of fuel the vehicle uses
-     * 
+     *
      * @param fuelType The fuel type to set
      */
     public void setFuelType(String fuelType) {
@@ -296,16 +296,16 @@ public class VehicleModel {
 
     /**
      * Returns the vehicle's transmission type
-     * 
+     *
      * @return The transmission type
      */
     public String getTransmission() {
         return transmission;
     }
-    
+
     /**
      * Sets the vehicle's transmission type
-     * 
+     *
      * @param transmission The transmission type to set
      */
     public void setTransmission(String transmission) {
@@ -314,16 +314,16 @@ public class VehicleModel {
 
     /**
      * Returns the passenger capacity of the vehicle
-     * 
+     *
      * @return The passenger capacity
      */
     public int getCapacity() {
         return capacity;
     }
-    
+
     /**
      * Sets the passenger capacity of the vehicle
-     * 
+     *
      * @param capacity The passenger capacity to set
      */
     public void setCapacity(int capacity) {
@@ -332,16 +332,16 @@ public class VehicleModel {
 
     /**
      * Returns the current availability status of the vehicle
-     * 
+     *
      * @return The vehicle status
      */
     public String getStatus() {
         return status;
     }
-    
+
     /**
      * Sets the current availability status of the vehicle
-     * 
+     *
      * @param status The vehicle status to set
      */
     public void setStatus(String status) {
@@ -350,16 +350,16 @@ public class VehicleModel {
 
     /**
      * Returns the URL to the vehicle's image
-     * 
+     *
      * @return The image URL
      */
     public String getImageUrl() {
         return imageUrl;
     }
-    
+
     /**
      * Sets the URL to the vehicle's image
-     * 
+     *
      * @param imageUrl The image URL to set
      */
     public void setImageUrl(String imageUrl) {
@@ -368,16 +368,16 @@ public class VehicleModel {
 
     /**
      * Returns the current location of the vehicle
-     * 
+     *
      * @return The vehicle location
      */
     public String getLocation() {
         return location;
     }
-    
+
     /**
      * Sets the current location of the vehicle
-     * 
+     *
      * @param location The vehicle location to set
      */
     public void setLocation(String location) {
@@ -386,16 +386,16 @@ public class VehicleModel {
 
     /**
      * Returns the detailed description of the vehicle
-     * 
+     *
      * @return The vehicle description
      */
     public String getDescription() {
         return description;
     }
-    
+
     /**
      * Sets the detailed description of the vehicle
-     * 
+     *
      * @param description The vehicle description to set
      */
     public void setDescription(String description) {
@@ -404,16 +404,16 @@ public class VehicleModel {
 
     /**
      * Returns the special features and amenities of the vehicle
-     * 
+     *
      * @return The vehicle features
      */
     public String getFeatures() {
         return features;
     }
-    
+
     /**
      * Sets the special features and amenities of the vehicle
-     * 
+     *
      * @param features The vehicle features to set
      */
     public void setFeatures(String features) {

@@ -17,7 +17,7 @@ import com.FleetX.util.PasswordUtil;
 public class LoginService {
 	private Connection dbConnection;
 	private boolean isConnectionError = false;
-	
+
 	/**
 	 * Constructor that initializes the database connection.
 	 * Sets an error flag if the connection cannot be established.
@@ -31,11 +31,11 @@ public class LoginService {
 			isConnectionError = true;
 		}
 	}
-	
+
 	/**
 	 * Authenticates a user by comparing provided credentials with database records.
 	 * Queries the database for the user and delegates to validatePassword for comparison.
-	 * 
+	 *
 	 * @param userModel The user model containing login credentials
 	 * @return Boolean indicating authentication result:
 	 *         - true: authentication successful
@@ -60,12 +60,12 @@ public class LoginService {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Helper method to validate the user's password against the stored encrypted password.
 	 * Decrypts the password from the database using the username as the key.
 	 * Performs comparison with the password provided by the user.
-	 * 
+	 *
 	 * @param resultSet The result set containing the stored credentials
 	 * @param userModel The user model containing the login attempt credentials
 	 * @return true if passwords match, false otherwise

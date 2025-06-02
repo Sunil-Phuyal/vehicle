@@ -1,12 +1,5 @@
 package com.FleetX.controller.vehicle;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 import java.sql.Date;
 
@@ -14,6 +7,13 @@ import com.FleetX.model.CartModel;
 import com.FleetX.model.VehicleModel;
 import com.FleetX.service.CartService;
 import com.FleetX.service.VehicleService;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AddToCartController
@@ -34,6 +34,7 @@ public class AddToCartController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int vehicleId = Integer.parseInt(request.getParameter("vehicleId"));

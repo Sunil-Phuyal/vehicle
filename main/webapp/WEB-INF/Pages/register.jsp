@@ -63,8 +63,8 @@
 							placeholder="e.g., john123@gmail.com" />
 					</div>
 					<div class="field-group">
-						<label for="phone">Phone</label> <input type="tel" id="phone" name="phone" value="${phone}"
-					placeholder="e.g., 98********" />
+						<label for="phone">Phone</label> <input type="tel" id="phone"
+							name="phone" value="${phone}" placeholder="e.g., 98********" />
 					</div>
 				</div>
 

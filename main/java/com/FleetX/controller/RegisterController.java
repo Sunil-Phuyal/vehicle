@@ -1,10 +1,5 @@
 package com.FleetX.controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -12,6 +7,12 @@ import com.FleetX.model.UserModel;
 import com.FleetX.service.RegisterService;
 import com.FleetX.util.PasswordUtil;
 import com.FleetX.util.ValidationUtil;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class RegisterController
@@ -25,6 +26,7 @@ public class RegisterController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -35,6 +37,7 @@ public class RegisterController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -89,24 +92,31 @@ public class RegisterController extends HttpServlet {
 	    String repassword = request.getParameter("repassword");
 
 	    // Validate fields
-	    if (ValidationUtil.isNullOrEmpty(fname))
-	        return "First name is empty";
-	    if (!ValidationUtil.isAlphabetic(fname))
-	        return "First name must contain only letters";
+	    if (ValidationUtil.isNullOrEmpty(fname)) {
+			return "First name is empty";
+		}
+	    if (!ValidationUtil.isAlphabetic(fname)) {
+			return "First name must contain only letters";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(lname))
-	        return "Last name is empty";
-	    if (!ValidationUtil.isAlphabetic(lname))
-	        return "Last name must contain only letters";
+	    if (ValidationUtil.isNullOrEmpty(lname)) {
+			return "Last name is empty";
+		}
+	    if (!ValidationUtil.isAlphabetic(lname)) {
+			return "Last name must contain only letters";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(uname))
-	        return "Username is empty";
-	    if (!ValidationUtil.isAlphanumericStartingWithLetter(uname))
-	        return "Username must start with a letter and contain only letters and numbers";
+	    if (ValidationUtil.isNullOrEmpty(uname)) {
+			return "Username is empty";
+		}
+	    if (!ValidationUtil.isAlphanumericStartingWithLetter(uname)) {
+			return "Username must start with a letter and contain only letters and numbers";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(dob))
-	        return "Date of birth is empty";
-	    
+	    if (ValidationUtil.isNullOrEmpty(dob)) {
+			return "Date of birth is empty";
+		}
+
 	    LocalDate dobDate = null;
 	    try {
 	        dobDate = LocalDate.parse(dob);
@@ -114,25 +124,33 @@ public class RegisterController extends HttpServlet {
 	        return "Invalid date format for DOB";
 	    }
 
-	    if (!ValidationUtil.isAgeAtLeast21(dobDate))
-	        return "User age must be 18 or more";
+	    if (!ValidationUtil.isAgeAtLeast21(dobDate)) {
+			return "User age must be 18 or more";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(email))
-	        return "Email is empty";
-	    if (!ValidationUtil.isValidEmail(email))
-	        return "Invalid email format";
+	    if (ValidationUtil.isNullOrEmpty(email)) {
+			return "Email is empty";
+		}
+	    if (!ValidationUtil.isValidEmail(email)) {
+			return "Invalid email format";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(phone))
-	        return "Phone number is empty";
-	    if (!ValidationUtil.isValidPhoneNumber(phone))
-	        return "Phone number must start with 98 and be 10 digits";
+	    if (ValidationUtil.isNullOrEmpty(phone)) {
+			return "Phone number is empty";
+		}
+	    if (!ValidationUtil.isValidPhoneNumber(phone)) {
+			return "Phone number must start with 98 and be 10 digits";
+		}
 
-	    if (ValidationUtil.isNullOrEmpty(password))
-	        return "Password is empty";
-	    if (ValidationUtil.isNullOrEmpty(repassword))
-	        return "Please retype the password";
-	    if (!ValidationUtil.doPasswordsMatch(password, repassword))
-	        return "Passwords do not match";
+	    if (ValidationUtil.isNullOrEmpty(password)) {
+			return "Password is empty";
+		}
+	    if (ValidationUtil.isNullOrEmpty(repassword)) {
+			return "Please retype the password";
+		}
+	    if (!ValidationUtil.doPasswordsMatch(password, repassword)) {
+			return "Passwords do not match";
+		}
 
 	    return null;
 	}

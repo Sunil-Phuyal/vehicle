@@ -17,11 +17,11 @@
 	z-index: 1000;
 }
 
-.logo, .logged, .buttons, .navBar{
+.logo, .logged, .buttons, .navBar {
 	width: 100%;
 }
 
-.logo{
+.logo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -87,7 +87,6 @@
 	cursor: pointer;
 }
 
-
 .cart {
 	border: 0;
 	color: var(--white);
@@ -95,7 +94,7 @@
 
 .cart i {
 	margin-right: .25rem;
-	font-size:1.1rem;
+	font-size: 1.1rem;
 }
 
 .userProfile, .logged form {
@@ -114,7 +113,7 @@
 	background: var(--gray-300);
 }
 
-.userProfile a i{
+.userProfile a i {
 	color: var(--white);
 	font-size: 1.5rem;
 }

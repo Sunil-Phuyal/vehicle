@@ -278,8 +278,8 @@ small {
 								<div class="form-group">
 									<label for="imageUrl">Change Image (optional)</label> <input
 										type="file" id="imageUrl" name="imageUrl" accept="image/*">
-									<small>Current Image:${vehicle.imageUrl}</small> 
-									<input type="hidden" name="existingImageUrl"
+									<small>Current Image:${vehicle.imageUrl}</small> <input
+										type="hidden" name="existingImageUrl"
 										value="${vehicle.imageUrl}">
 								</div>
 								<div class="form-group">

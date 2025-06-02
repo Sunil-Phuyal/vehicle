@@ -1,17 +1,19 @@
 package com.FleetX.controller.user;
 
+import java.io.IOException;
+
+import com.FleetX.service.UserService;
+import com.FleetX.util.PasswordUtil;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import com.FleetX.service.UserService;
-import com.FleetX.util.PasswordUtil;
 
 /**
  * Servlet implementation class ForgetPasswordController
- * 
+ *
  * This controller handles password reset functionality for users who have
  * forgotten their passwords. It validates the email, checks password match,
  * and updates the password in the database.
@@ -32,13 +34,14 @@ public class ForgetPasswordController extends HttpServlet {
 
 	/**
 	 * Handles POST requests for password reset
-	 * 
+	 *
 	 * @param request HTTP request containing email and new password details
 	 * @param response HTTP response
 	 * @throws ServletException if a servlet-specific error occurs
 	 * @throws IOException if an I/O error occurs
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Get form parameters
@@ -49,7 +52,7 @@ public class ForgetPasswordController extends HttpServlet {
 		try {
 			// Lookup username by email
 			String username = userService.getUsernameByEmail(email);
-			
+
 			// Validate email exists in system
 			if (username == null) {
 				request.setAttribute("error", "Email not registered.");
@@ -66,10 +69,10 @@ public class ForgetPasswordController extends HttpServlet {
 
 			// Encrypt the new password
 			String encryptPass = PasswordUtil.encrypt(username, newPassword);
-			
+
 			// Update password in database
 			boolean success = userService.updateUserPasswordByEmail(email, encryptPass);
-			
+
 			// Set appropriate message based on result
 			if (success) {
 				request.setAttribute("success", "Password reset successful. Please log in.");
